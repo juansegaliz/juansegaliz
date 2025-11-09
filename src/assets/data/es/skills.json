@@ -1,0 +1,82 @@
+{
+  "categories": [
+    {
+      "category": "Lenguajes y Frameworks",
+      "skills": [
+        { "name": "C#" },
+        { "name": ".NET / .NET Core" },
+        { "name": "TypeScript" },
+        { "name": "Angular" },
+        { "name": "JavaScript" },
+        { "name": "Python" },
+        { "name": "Java" },
+        { "name": "PHP" }
+      ]
+    },
+    {
+      "category": "Frontend y UX",
+      "skills": [
+        { "name": "HTML5 / CSS3" },
+        { "name": "Tailwind CSS" },
+        { "name": "Bootstrap" },
+        { "name": "RxJS" },
+        { "name": "Responsive Design" },
+        { "name": "Accessibility (WCAG)" }
+      ]
+    },
+    {
+      "category": "Bases de Datos",
+      "skills": [
+        { "name": "SQL Server" },
+        { "name": "PostgreSQL" },
+        { "name": "MySQL" },
+        { "name": "MongoDB" },
+        { "name": "Entity Framework" },
+        { "name": "Dapper" }
+      ]
+    },
+    {
+      "category": "DevOps y Despliegue",
+      "skills": [
+        { "name": "Docker" },
+        { "name": "Azure DevOps" },
+        { "name": "GitHub Actions" },
+        { "name": "CI/CD Pipelines" },
+        { "name": "IIS" },
+        { "name": "Nginx" },
+        { "name": "Azure Cloud" }
+      ]
+    },
+    {
+      "category": "Arquitectura y Patrones",
+      "skills": [
+        { "name": "Clean Architecture" },
+        { "name": "DDD (Domain-Driven Design)" },
+        { "name": "Microservicios" },
+        { "name": "MVVM" },
+        { "name": "RESTful APIs" },
+        { "name": "CQRS" },
+        { "name": "Event Sourcing" }
+      ]
+    },
+    {
+      "category": "Herramientas de Gestión",
+      "skills": [
+        { "name": "Git / GitHub / GitLab" },
+        { "name": "Azure DevOps Boards" },
+        { "name": "Jira" },
+        { "name": "Scrum / Agile" }
+      ]
+    },
+    {
+      "category": "Experiencia Adicional",
+      "skills": [
+        { "name": "Code Review" },
+        { "name": "Mentoring" },
+        { "name": "Technical Leadership" },
+        { "name": "Unit Testing (xUnit, Jasmine, Karma)" },
+        { "name": "API Documentation (Swagger)" }
+      ]
+    }
+  ]
+}

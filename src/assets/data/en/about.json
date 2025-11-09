@@ -1,0 +1,28 @@
+{
+  "name": "Juan Sebastian Galindo Lizcano",
+  "title": "Software Developer | University Lecturer",
+  "sinceDev": 2014,
+  "sinceTeacher": 2018,
+  "intro": "I am a software developer since 2014 and a university lecturer since 2018, passionate about building high-impact technological solutions. I have played versatile roles within organizations: from deep business logic understanding to Backend, Fullstack and Software Maintenance work, as well as Technical Lead, coordinating teams and defining workflows that ensure scalable, efficient and high-quality products. My current focus is on .NET and Angular, building solid architectures with DDD, microservices and Clean Architecture, complemented by DevOps practices for automated, robust deployments.",
+  "motivations": [
+    "Seeing systems being used, evolving, and delivering real value over time.",
+    "Teaching and mentoring future developers.",
+    "Creating technology that lasts and scales.",
+    "Collaboration and teamwork."
+  ],
+  "values": [
+    "Self-taught and constantly curious",
+    "Resilience and adaptability",
+    "Focus on complex problem solving",
+    "Collaborative leadership"
+  ],
+  "location": "Colombia",
+  "hero": {
+    "headline": "I build useful, scalable and maintainable software.",
+    "subheadline": "Technical Lead, .NET + Angular Fullstack, and lecturer since 2018.",
+    "ctaPrimary": "See projects",
+    "ctaSecondary": "Contact me",
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80",
+    "alt": "Developer working on a laptop"
+  }
+}

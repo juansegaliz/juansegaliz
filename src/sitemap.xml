@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://juansegaliz.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://juansegaliz.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://juansegaliz.com/" />
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://juansegaliz.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://juansegaliz.com/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://juansegaliz.com/about" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Skills -->
+  <url>
+    <loc>https://juansegaliz.com/skills</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://juansegaliz.com/skills" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://juansegaliz.com/skills" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Projects -->
+  <url>
+    <loc>https://juansegaliz.com/projects</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://juansegaliz.com/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://juansegaliz.com/projects" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://juansegaliz.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://juansegaliz.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://juansegaliz.com/contact" />
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

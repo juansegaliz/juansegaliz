@@ -1,0 +1,68 @@
+@if (vm.loading()) {
+  <div class="section-container flex items-center justify-center min-h-[60vh]">
+    <div class="animate-pulse text-[var(--text-secondary)]">
+      {{ 'common.loading' | translate }}
+    </div>
+  </div>
+} @else if (vm.error()) {
+  <div class="section-container">
+    <div class="card bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
+      <p class="text-red-800 dark:text-red-200">{{ vm.error() }}</p>
+    </div>
+  </div>
+} @else {
+  @if (vm.data(); as data) {
+    <div class="section-container">
+    <h1 class="text-fluid-4xl font-bold text-[var(--text-primary)] mb-8">
+      {{ 'about.title' | translate }}
+    </h1>
+
+    <!-- Intro -->
+    <div class="card mb-8">
+      <h2 class="text-fluid-2xl font-semibold text-[var(--text-primary)] mb-4">
+        {{ data.name }}
+      </h2>
+      <p class="text-fluid-lg text-[var(--text-secondary)] mb-4">
+        {{ data.title }}
+      </p>
+      <p class="text-fluid-base text-[var(--text-secondary)] leading-relaxed">
+        {{ data.intro }}
+      </p>
+    </div>
+
+    <!-- Motivations -->
+    <div class="card mb-8">
+      <h2 class="text-fluid-2xl font-semibold text-[var(--text-primary)] mb-6">
+        {{ 'about.motivationsTitle' | translate }}
+      </h2>
+      <ul class="space-y-3">
+        @for (motivation of data.motivations; track $index) {
+          <li class="flex items-start gap-3">
+            <svg class="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span class="text-[var(--text-secondary)]">{{ motivation }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <!-- Values -->
+    <div class="card">
+      <h2 class="text-fluid-2xl font-semibold text-[var(--text-primary)] mb-6">
+        {{ 'about.valuesTitle' | translate }}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        @for (value of data.values; track $index) {
+          <div class="flex items-center gap-3 p-4 bg-[var(--bg-primary)] rounded-lg border border-[var(--border-color)]">
+            <svg class="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <span class="text-[var(--text-primary)] font-medium">{{ value }}</span>
+          </div>
+        }
+      </div>
+    </div>
+    </div>
+  }
+}

@@ -1,0 +1,93 @@
+@if (vm.loading()) {
+  <div class="section-container flex items-center justify-center min-h-[60vh]">
+    <div class="animate-pulse text-[var(--text-secondary)]">
+      {{ 'common.loading' | translate }}
+    </div>
+  </div>
+} @else if (vm.error()) {
+  <div class="section-container">
+    <div class="card bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
+      <p class="text-red-800 dark:text-red-200">{{ vm.error() }}</p>
+    </div>
+  </div>
+} @else {
+  @if (vm.data(); as data) {
+    <!-- Hero Section -->
+    <section class="section-container">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-fluid-5xl font-bold text-[var(--text-primary)] mb-4">
+          {{ data.hero.headline }}
+        </h1>
+        <p class="text-fluid-xl text-[var(--text-secondary)] mb-8">
+          {{ data.hero.subheadline }}
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a routerLink="/projects" class="btn-primary">
+            {{ data.hero.ctaPrimary }}
+          </a>
+          <a routerLink="/contact" class="btn-secondary">
+            {{ data.hero.ctaSecondary }}
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <img
+          [src]="data.hero.image"
+          [alt]="data.hero.alt"
+          class="rounded-2xl shadow-2xl w-full h-auto"
+          loading="eager"
+          width="1600"
+          height="1067"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- About Teaser -->
+  <section class="section-container bg-[var(--bg-secondary)]">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-fluid-4xl font-bold text-[var(--text-primary)] mb-6">
+        {{ 'home.aboutTitle' | translate }}
+      </h2>
+      <p class="text-fluid-lg text-[var(--text-secondary)] mb-8">
+        {{ data.intro }}
+      </p>
+      <a routerLink="/about" class="btn-primary">
+        {{ 'home.learnMore' | translate }}
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section-container">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="text-fluid-4xl font-bold text-primary-600 mb-2">
+          {{ getYearsAsDev() }}+
+        </div>
+        <div class="text-fluid-lg text-[var(--text-secondary)]">
+          {{ 'home.yearsExperience' | translate }}
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="text-fluid-4xl font-bold text-primary-600 mb-2">
+          {{ getYearsAsTeacher() }}+
+        </div>
+        <div class="text-fluid-lg text-[var(--text-secondary)]">
+          {{ 'home.yearsTeaching' | translate }}
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="text-fluid-4xl font-bold text-primary-600 mb-2">
+          50+
+        </div>
+        <div class="text-fluid-lg text-[var(--text-secondary)]">
+          {{ 'home.projectsCompleted' | translate }}
+        </div>
+      </div>
+    </div>
+  </section>
+  }
+}

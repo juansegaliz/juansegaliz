@@ -1,0 +1,102 @@
+<div class="section-container">
+  <h1 class="text-fluid-4xl font-bold text-[var(--text-primary)] mb-8">
+    {{ 'projects.title' | translate }}
+  </h1>
+
+  @if (vm.loading()) {
+    <div class="flex items-center justify-center min-h-[40vh]">
+      <div class="animate-pulse text-[var(--text-secondary)]">
+        {{ 'common.loading' | translate }}
+      </div>
+    </div>
+  } @else if (vm.error()) {
+    <div class="card bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
+      <p class="text-red-800 dark:text-red-200">{{ vm.error() }}</p>
+    </div>
+  } @else {
+    <!-- Search and filters -->
+    <div class="mb-8 space-y-4">
+      <!-- Search -->
+      <div class="relative">
+        <input
+          type="search"
+          [(ngModel)]="searchQuery"
+          (ngModelChange)="onSearchChange($event)"
+          [placeholder]="'projects.search' | translate"
+          class="w-full px-4 py-3 pl-12 bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] placeholder-[var(--text-secondary)] focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+        />
+        <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--text-secondary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+
+      <!-- Filter chips -->
+      <div class="flex flex-wrap gap-3">
+        <!-- Year filter -->
+        @if (vm.yearOptions().length > 0) {
+          <select
+            (change)="vm.setYearFilter($any($event.target).value ? +$any($event.target).value : null)"
+            class="px-4 py-2 bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] focus:ring-2 focus:ring-primary-500"
+          >
+            <option [value]="''">{{ 'projects.allYears' | translate }}</option>
+            @for (option of vm.yearOptions(); track option.value) {
+              <option [value]="option.value">{{ option.label }}</option>
+            }
+          </select>
+        }
+
+        <!-- Country filter -->
+        @if (vm.countryOptions().length > 0) {
+          <select
+            (change)="vm.setCountryFilter($any($event.target).value || null)"
+            class="px-4 py-2 bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] focus:ring-2 focus:ring-primary-500"
+          >
+            <option [value]="''">{{ 'projects.allCountries' | translate }}</option>
+            @for (option of vm.countryOptions(); track option.value) {
+              <option [value]="option.value">{{ option.label }}</option>
+            }
+          </select>
+        }
+
+        <!-- Type filter -->
+        @if (vm.typeOptions().length > 0) {
+          <select
+            (change)="vm.setTypeFilter($any($event.target).value || null)"
+            class="px-4 py-2 bg-[var(--bg-secondary)] border border-[var(--border-color)] rounded-lg text-[var(--text-primary)] focus:ring-2 focus:ring-primary-500"
+          >
+            <option [value]="''">{{ 'projects.allTypes' | translate }}</option>
+            @for (option of vm.typeOptions(); track option.value) {
+              <option [value]="option.value">{{ option.label }}</option>
+            }
+          </select>
+        }
+
+        <!-- Clear filters -->
+        @if (vm.hasActiveFilters()) {
+          <button
+            type="button"
+            (click)="vm.clearFilters(); searchQuery = ''"
+            class="px-4 py-2 text-primary-600 hover:text-primary-700 font-medium"
+          >
+            {{ 'projects.clearFilters' | translate }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <!-- Projects grid -->
+    @if (vm.displayedProjects().length > 0) {
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (project of vm.displayedProjects(); track project.id) {
+          <app-project-card [project]="project" />
+        }
+      </div>
+    } @else {
+      <div class="text-center py-12">
+        <p class="text-fluid-lg text-[var(--text-secondary)]">
+          {{ 'projects.noResults' | translate }}
+        </p>
+      </div>
+    }
+  }
+</div>

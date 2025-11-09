@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "common": {
+    "loading": "Loading..."
+  },
+  "home": {
+    "aboutTitle": "Who am I?",
+    "learnMore": "Learn more about me",
+    "yearsExperience": "Years of experience",
+    "yearsTeaching": "Years teaching",
+    "projectsCompleted": "Projects completed"
+  },
+  "about": {
+    "title": "About Me",
+    "motivationsTitle": "Motivations",
+    "valuesTitle": "Values"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "all": "All"
+  },
+  "projects": {
+    "title": "Projects and Achievements",
+    "search": "Search projects...",
+    "allYears": "All years",
+    "allCountries": "All countries",
+    "allTypes": "All types",
+    "clearFilters": "Clear filters",
+    "noResults": "No projects found"
+  },
+  "projectDetail": {
+    "back": "Back to projects",
+    "notFound": "Project not found",
+    "notFoundMessage": "The project you're looking for doesn't exist or has been removed.",
+    "backToProjects": "Back to projects",
+    "techStack": "Technologies used",
+    "challenges": "Challenges",
+    "solutions": "Solutions",
+    "results": "Results"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a project in mind? Looking for collaboration or consulting? Reach out through any of these channels.",
+    "emailTitle": "Email",
+    "linkedinTitle": "LinkedIn"
+  },
+  "footer": {
+    "tagline": "Software developer and university lecturer specialized in .NET and Angular",
+    "social": "Social media",
+    "rights": "All rights reserved."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "common": {
+    "loading": "Cargando..."
+  },
+  "home": {
+    "aboutTitle": "¿Quién soy?",
+    "learnMore": "Conoce más sobre mí",
+    "yearsExperience": "Años de experiencia",
+    "yearsTeaching": "Años enseñando",
+    "projectsCompleted": "Proyectos completados"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "motivationsTitle": "Motivaciones",
+    "valuesTitle": "Valores"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "all": "Todas"
+  },
+  "projects": {
+    "title": "Proyectos y Logros",
+    "search": "Buscar proyectos...",
+    "allYears": "Todos los años",
+    "allCountries": "Todos los países",
+    "allTypes": "Todos los tipos",
+    "clearFilters": "Limpiar filtros",
+    "noResults": "No se encontraron proyectos"
+  },
+  "projectDetail": {
+    "back": "Volver a proyectos",
+    "notFound": "Proyecto no encontrado",
+    "notFoundMessage": "El proyecto que buscas no existe o ha sido removido.",
+    "backToProjects": "Volver a proyectos",
+    "techStack": "Tecnologías utilizadas",
+    "challenges": "Retos",
+    "solutions": "Soluciones",
+    "results": "Resultados"
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "¿Tienes un proyecto en mente? ¿Buscas colaboración o consultoría? Contáctame a través de cualquiera de estos medios.",
+    "emailTitle": "Correo electrónico",
+    "linkedinTitle": "LinkedIn"
+  },
+  "footer": {
+    "tagline": "Desarrollador de software y docente universitario especializado en .NET y Angular",
+    "social": "Redes sociales",
+    "rights": "Todos los derechos reservados."
+  }
+}

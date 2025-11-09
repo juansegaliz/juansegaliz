@@ -1,0 +1,70 @@
+@if (vm.loading()) {
+  <div class="section-container flex items-center justify-center min-h-[60vh]">
+    <div class="animate-pulse text-[var(--text-secondary)]">
+      {{ 'common.loading' | translate }}
+    </div>
+  </div>
+} @else if (vm.error()) {
+  <div class="section-container">
+    <div class="card bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
+      <p class="text-red-800 dark:text-red-200">{{ vm.error() }}</p>
+    </div>
+  </div>
+} @else {
+  <div class="section-container">
+    <h1 class="text-fluid-4xl font-bold text-[var(--text-primary)] mb-8">
+      {{ 'skills.title' | translate }}
+    </h1>
+
+    <!-- Filter chips -->
+    @if (vm.availableCategories().length > 0) {
+      <div class="flex flex-wrap gap-3 mb-8">
+        <button
+          type="button"
+          (click)="vm.clearFilter()"
+          [class.bg-primary-600]="!vm.selectedCategory()"
+          [class.text-white]="!vm.selectedCategory()"
+          [class.bg-[var(--bg-secondary)]]="vm.selectedCategory()"
+          [class.text-[var(--text-primary)]]="vm.selectedCategory()"
+          class="px-4 py-2 rounded-lg border border-[var(--border-color)] transition-colors font-medium"
+        >
+          {{ 'skills.all' | translate }}
+        </button>
+        @for (category of vm.availableCategories(); track category) {
+          <button
+            type="button"
+            (click)="vm.selectCategory(category)"
+            [class.bg-primary-600]="vm.selectedCategory() === category"
+            [class.text-white]="vm.selectedCategory() === category"
+            [class.bg-[var(--bg-secondary)]]="vm.selectedCategory() !== category"
+            [class.text-[var(--text-primary)]]="vm.selectedCategory() !== category"
+            class="px-4 py-2 rounded-lg border border-[var(--border-color)] transition-colors font-medium"
+          >
+            {{ category }}
+          </button>
+        }
+      </div>
+    }
+
+    <!-- Skills grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      @for (category of vm.filteredCategories(); track category.category) {
+        <div class="card">
+          <h2 class="text-fluid-xl font-semibold text-[var(--text-primary)] mb-4">
+            {{ category.category }}
+          </h2>
+          <div class="flex flex-wrap gap-4">
+            @for (skill of category.skills; track skill.name) {
+              <div class="flex flex-col items-center gap-2 group">
+                <app-tech-icon [name]="skill.name" size="md"></app-tech-icon>
+                <span class="text-xs font-medium text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors text-center">
+                  {{ skill.name }}
+                </span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+}

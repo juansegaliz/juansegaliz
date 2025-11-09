@@ -1,0 +1,118 @@
+@if (vm.loading()) {
+  <div class="section-container flex items-center justify-center min-h-[60vh]">
+    <div class="animate-pulse text-[var(--text-secondary)]">
+      {{ 'common.loading' | translate }}
+    </div>
+  </div>
+} @else if (vm.notFound()) {
+  <div class="section-container">
+    <div class="card text-center py-12">
+      <h1 class="text-fluid-3xl font-bold text-[var(--text-primary)] mb-4">
+        {{ 'projectDetail.notFound' | translate }}
+      </h1>
+      <p class="text-[var(--text-secondary)] mb-6">
+        {{ 'projectDetail.notFoundMessage' | translate }}
+      </p>
+      <a routerLink="/projects" class="btn-primary">
+        {{ 'projectDetail.backToProjects' | translate }}
+      </a>
+    </div>
+  </div>
+} @else if (vm.error()) {
+  <div class="section-container">
+    <div class="card bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
+      <p class="text-red-800 dark:text-red-200">{{ vm.error() }}</p>
+    </div>
+  </div>
+} @else {
+  @if (vm.project(); as project) {
+    <div class="section-container">
+    <!-- Back button -->
+    <div class="mb-8">
+      <a routerLink="/projects" class="inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-primary-600 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        {{ 'projectDetail.back' | translate }}
+      </a>
+    </div>
+
+    <!-- Project header -->
+    <div class="card mb-8">
+      <h1 class="text-fluid-4xl font-bold text-[var(--text-primary)] mb-4">
+        {{ project.title }}
+      </h1>
+
+      <div class="flex flex-wrap gap-4 mb-6 text-[var(--text-secondary)]">
+        <span class="flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          {{ project.year }}
+        </span>
+        <span class="text-[var(--border-color)]">•</span>
+        <span>{{ project.country }}</span>
+        <span class="text-[var(--border-color)]">•</span>
+        <span>{{ project.type }}</span>
+        <span class="text-[var(--border-color)]">•</span>
+        <span>{{ project.client }}</span>
+      </div>
+
+      <p class="text-fluid-lg text-[var(--text-secondary)]">
+        {{ project.description }}
+      </p>
+    </div>
+
+    <!-- Tech stack -->
+    <div class="card mb-8">
+      <h2 class="text-fluid-2xl font-semibold text-[var(--text-primary)] mb-4">
+        {{ 'projectDetail.techStack' | translate }}
+      </h2>
+      <div class="flex flex-wrap gap-6">
+        @for (tech of project.stack; track tech) {
+          <div class="flex flex-col items-center gap-2 group">
+            <app-tech-icon [name]="tech" size="lg"></app-tech-icon>
+            <span class="text-sm font-medium text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-colors text-center">
+              {{ tech }}
+            </span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Additional sections -->
+    @if (project.challenges) {
+      <div class="card mb-8">
+        <h2 class="text-fluid-2xl font-semibold text-[var(--text-primary)] mb-4">
+          {{ 'projectDetail.challenges' | translate }}
+        </h2>
+        <p class="text-[var(--text-secondary)] leading-relaxed">
+          {{ project.challenges }}
+        </p>
+      </div>
+    }
+
+    @if (project.solutions) {
+      <div class="card mb-8">
+        <h2 class="text-fluid-2xl font-semibold text-[var(--text-primary)] mb-4">
+          {{ 'projectDetail.solutions' | translate }}
+        </h2>
+        <p class="text-[var(--text-secondary)] leading-relaxed">
+          {{ project.solutions }}
+        </p>
+      </div>
+    }
+
+    @if (project.results) {
+      <div class="card">
+        <h2 class="text-fluid-2xl font-semibold text-[var(--text-primary)] mb-4">
+          {{ 'projectDetail.results' | translate }}
+        </h2>
+        <p class="text-[var(--text-secondary)] leading-relaxed">
+          {{ project.results }}
+        </p>
+      </div>
+    }
+    </div>
+  }
+}

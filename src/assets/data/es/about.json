@@ -1,0 +1,28 @@
+{
+  "name": "Juan Sebastian Galindo Lizcano",
+  "title": "Desarrollador de Software | Docente Universitario",
+  "sinceDev": 2014,
+  "sinceTeacher": 2018,
+  "intro": "Soy Juan Sebastian Galindo Lizcano, desarrollador de software desde 2014 y docente universitario desde 2018, apasionado por construir soluciones tecnológicas de alto impacto. A lo largo de mi experiencia he desempeñado roles versátiles dentro de organizaciones: desde la comprensión profunda de la lógica del negocio hasta trabajos de Backend, Fullstack y Mantenimiento de software, así como Líder Técnico, coordinando equipos y definiendo flujos de trabajo que aseguran productos escalables, eficientes y de calidad. Mi mayor enfoque hoy está en el desarrollo con .NET y Angular, creando arquitecturas sólidas bajo patrones modernos como DDD, microservicios y Clean Architecture, complementadas con prácticas DevOps para despliegues automatizados y robustos.",
+  "motivations": [
+    "Ver que los sistemas se usan, evolucionan y generan valor real en el tiempo.",
+    "Enseñar y acompañar a futuros desarrolladores.",
+    "Crear tecnología que perdure y sea escalable.",
+    "Colaboración y trabajo en equipo."
+  ],
+  "values": [
+    "Autodidacta y curiosidad constante",
+    "Resiliencia y adaptabilidad",
+    "Orientación a problemas complejos",
+    "Liderazgo colaborativo"
+  ],
+  "location": "Colombia",
+  "hero": {
+    "headline": "Construyo software útil, escalable y mantenible.",
+    "subheadline": "Líder técnico, Fullstack .NET + Angular, y docente desde 2018.",
+    "ctaPrimary": "Ver proyectos",
+    "ctaSecondary": "Contactarme",
+    "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80",
+    "alt": "Desarrollador trabajando en laptop"
+  }
+}
