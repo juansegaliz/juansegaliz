@@ -32,11 +32,13 @@ export class ProjectDetailPage implements OnInit {
     const project = this.vm.project();
     if (!project) return;
 
+    const slug = this.route.snapshot.paramMap.get('slug');
     this.seoService.setPageMetadata({
       title: `${project.title} - Projects`,
       description: project.description,
       type: 'article',
       lang: this.languageService.getCurrentLanguage(),
+      url: `https://juansegaliz.com/projects/${slug}`,
     });
   }
 }

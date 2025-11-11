@@ -29,6 +29,7 @@ export class SkillsPage implements OnInit {
       description: 'Technical skills and expertise in .NET, Angular, Cloud, DevOps, and modern software architecture.',
       type: 'website',
       lang: this.languageService.getCurrentLanguage(),
+      url: 'https://juansegaliz.com/skills',
     });
   }
 }

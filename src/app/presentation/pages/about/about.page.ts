@@ -32,6 +32,7 @@ export class AboutPage implements OnInit {
       type: 'profile',
       author: data.name,
       lang: this.languageService.getCurrentLanguage(),
+      url: 'https://juansegaliz.com/about',
     });
   }
 }

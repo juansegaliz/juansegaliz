@@ -36,6 +36,7 @@ export class ProjectsPage implements OnInit {
       description: 'Portfolio of software development projects, from enterprise applications to educational platforms.',
       type: 'website',
       lang: this.languageService.getCurrentLanguage(),
+      url: 'https://juansegaliz.com/projects',
     });
   }
 }

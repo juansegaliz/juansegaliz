@@ -25,6 +25,7 @@ export class ContactPage implements OnInit {
       description: 'Connect with me via email or LinkedIn for collaboration, consulting, or teaching opportunities.',
       type: 'website',
       lang: this.languageService.getCurrentLanguage(),
+      url: 'https://juansegaliz.com/contact',
     });
   }
 }

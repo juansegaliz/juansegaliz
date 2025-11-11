@@ -53,6 +53,7 @@ export class HomePage implements OnInit {
       author: data.name,
       keywords: ['.NET', 'Angular', 'Fullstack', 'Developer', 'Software Engineer', 'Teacher'],
       lang: this.languageService.getCurrentLanguage(),
+      url: 'https://juansegaliz.com',
     });
 
     this.seoService.setJsonLd({

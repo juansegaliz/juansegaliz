@@ -1,6 +1,8 @@
 # Juan Sebastian Galindo Lizcano - Personal Portfolio
 
-Professional personal website built with Angular 20, Server-Side Rendering (SSR), Tailwind CSS, and strict MVVM architecture. Fully bilingual (ES/EN) with real-time language switching, dark/light themes, and optimized for performance, SEO, and accessibility (WCAG AA).
+Professional personal website built with Angular 17, Server-Side Rendering (SSR), Tailwind CSS, and strict MVVM architecture. Fully bilingual (ES/EN) with real-time language switching, dark/light themes, and optimized for performance, SEO, and accessibility (WCAG AA).
+
+🌐 **Live Site**: [juansegaliz.com](https://juansegaliz.com)
 
 ## Table of Contents
 
@@ -81,8 +83,9 @@ src/
 
 ### Prerequisites
 
-- **Node.js** 18.x or higher
+- **Node.js** 18.x or higher (20.x recommended)
 - **npm** 9.x or higher
+- **Docker** (optional, for containerized deployment)
 
 ### Installation
 
@@ -161,7 +164,83 @@ The production server runs on `http://localhost:4000`
 
 ## Deployment
 
-### Nginx Configuration
+### Docker Deployment (Recommended)
+
+The application includes a production-ready Dockerfile with multi-stage builds for optimal image size.
+
+#### Build the Docker image
+
+```bash
+docker build -t juansegaliz-portfolio .
+```
+
+#### Run the container
+
+```bash
+# Run in foreground
+docker run -p 4000:4000 juansegaliz-portfolio
+
+# Run in background (detached mode)
+docker run -d --name portfolio -p 4000:4000 juansegaliz-portfolio
+
+# View logs
+docker logs portfolio
+
+# Stop container
+docker stop portfolio
+
+# Remove container
+docker rm portfolio
+```
+
+#### Docker Compose (Optional)
+
+Create a `docker-compose.yml`:
+
+```yaml
+version: '3.8'
+services:
+  portfolio:
+    build: .
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+```
+
+Run with:
+```bash
+docker-compose up -d
+```
+
+### CapRover Deployment
+
+1. Push your code to a Git repository
+2. Create a new app in CapRover
+3. Connect your repository
+4. CapRover will automatically detect the Dockerfile and deploy
+
+### Traditional Server Deployment
+
+#### Using PM2
+
+```bash
+# Install PM2
+npm install -g pm2
+
+# Build the application
+npm run build:ssr
+
+# Start with PM2
+pm2 start dist/frontend/server/server.mjs --name portfolio
+
+# Save PM2 configuration
+pm2 save
+
+# Setup PM2 to start on boot
+pm2 startup
+```
+
+#### Nginx Configuration
 
 ```nginx
 server {
@@ -174,6 +253,9 @@ server {
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
         proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
         proxy_cache_bypass $http_upgrade;
     }
 
@@ -185,23 +267,16 @@ server {
 }
 ```
 
-### Docker Deployment
+#### SSL with Let's Encrypt
 
-```dockerfile
-FROM node:18-alpine AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build:ssr
+```bash
+# Install Certbot
+sudo apt install certbot python3-certbot-nginx
 
-FROM node:18-alpine
-WORKDIR /app
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/package*.json ./
-RUN npm ci --production
-EXPOSE 4000
-CMD ["node", "dist/frontend/server/server.mjs"]
+# Get SSL certificate
+sudo certbot --nginx -d yourdomain.com
+
+# Auto-renewal (already configured by certbot)
 ```
 
 ## MVVM Architecture
@@ -264,8 +339,20 @@ Test strategy:
 - Repositories: Data fetching and mapping
 - Components: Rendering and user interactions
 
+## Environment Variables
+
+No environment variables are required for basic operation. All configuration is managed through:
+- `src/assets/data/` - Content data (ES/EN)
+- `src/assets/i18n/` - UI translations
+
+## Contributing
+
+This is a personal portfolio project, but suggestions and feedback are welcome!
+
+## License
+
+© 2024-2025 Juan Sebastian Galindo Lizcano. All rights reserved.
+
 ---
 
 **Built with** ❤️ **using Angular, TypeScript, and Tailwind CSS**
-
-© 2024 Juan Sebastian Galindo Lizcano. All rights reserved.
