@@ -4,7 +4,9 @@
       "category": "Lenguajes y Frameworks",
       "skills": [
         { "name": "C#" },
-        { "name": ".NET / .NET Core" },
+        { "name": ".NET" },
+        { "name": "ASP.NET" },
+        { "name": ".NET Core" },
         { "name": "TypeScript" },
         { "name": "Angular" },
         { "name": "JavaScript" },
@@ -16,7 +18,8 @@
     {
       "category": "Frontend y UX",
       "skills": [
-        { "name": "HTML5 / CSS3" },
+        { "name": "HTML5" },
+        { "name": "CSS3" },
         { "name": "Tailwind CSS" },
         { "name": "Bootstrap" },
         { "name": "RxJS" },
@@ -30,21 +33,20 @@
         { "name": "SQL Server" },
         { "name": "PostgreSQL" },
         { "name": "MySQL" },
-        { "name": "MongoDB" },
-        { "name": "Entity Framework" },
-        { "name": "Dapper" }
+        { "name": "MongoDB" }
       ]
     },
     {
       "category": "DevOps y Despliegue",
       "skills": [
         { "name": "Docker" },
-        { "name": "Azure DevOps" },
+        { "name": "CapRover" },
         { "name": "GitHub Actions" },
         { "name": "CI/CD Pipelines" },
         { "name": "IIS" },
         { "name": "Nginx" },
-        { "name": "Azure Cloud" }
+        { "name": "Ubuntu" },
+        { "name": "Windows Server" }
       ]
     },
     {
@@ -62,9 +64,13 @@
     {
       "category": "Herramientas de Gestión",
       "skills": [
-        { "name": "Git / GitHub / GitLab" },
-        { "name": "Azure DevOps Boards" },
+        { "name": "Git" },
+        { "name": "GitHub" },
+        { "name": "GitLab" },
+        { "name": "Bitbucket" },
         { "name": "Jira" },
+        { "name": "Taiga.io" },
+        { "name": "Trello" },
         { "name": "Scrum / Agile" }
       ]
     },
@@ -74,7 +80,6 @@
         { "name": "Code Review" },
         { "name": "Mentoring" },
         { "name": "Technical Leadership" },
-        { "name": "Unit Testing (xUnit, Jasmine, Karma)" },
         { "name": "API Documentation (Swagger)" }
       ]
     }

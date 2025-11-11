@@ -25,7 +25,7 @@ import { ThemeToggleComponent } from './theme-toggle.component';
             routerLink="/"
             class="text-xl font-bold text-[var(--text-primary)] hover:text-primary-600 transition-colors"
           >
-            Juan Sebastian
+            Juansegaliz
           </a>
 
           <!-- Desktop Navigation -->
@@ -52,6 +52,7 @@ import { ThemeToggleComponent } from './theme-toggle.component';
             >
               {{ 'nav.skills' | translate }}
             </a>
+            <!-- Projects link hidden
             <a
               routerLink="/projects"
               routerLinkActive="text-primary-600"
@@ -59,6 +60,7 @@ import { ThemeToggleComponent } from './theme-toggle.component';
             >
               {{ 'nav.projects' | translate }}
             </a>
+            -->
             <a
               routerLink="/contact"
               routerLinkActive="text-primary-600"

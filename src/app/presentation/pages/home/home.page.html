@@ -23,10 +23,12 @@
           {{ data.hero.subheadline }}
         </p>
         <div class="flex flex-wrap gap-4">
+          <!-- Projects button hidden
           <a routerLink="/projects" class="btn-primary">
             {{ data.hero.ctaPrimary }}
           </a>
-          <a routerLink="/contact" class="btn-secondary">
+          -->
+          <a routerLink="/contact" class="btn-primary">
             {{ data.hero.ctaSecondary }}
           </a>
         </div>
@@ -62,7 +64,7 @@
 
   <!-- Stats -->
   <section class="section-container">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div class="text-center">
         <div class="text-fluid-4xl font-bold text-primary-600 mb-2">
           {{ getYearsAsDev() }}+
@@ -79,6 +81,7 @@
           {{ 'home.yearsTeaching' | translate }}
         </div>
       </div>
+      <!-- Projects stat hidden
       <div class="text-center">
         <div class="text-fluid-4xl font-bold text-primary-600 mb-2">
           50+
@@ -87,6 +90,7 @@
           {{ 'home.projectsCompleted' | translate }}
         </div>
       </div>
+      -->
     </div>
   </section>
   }

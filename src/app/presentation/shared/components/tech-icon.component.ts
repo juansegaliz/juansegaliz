@@ -74,12 +74,19 @@ export class TechIconComponent {
       'Docker': 'devicon-docker-plain',
       'Kubernetes': 'devicon-kubernetes-plain',
       'Azure DevOps': 'devicon-azuredevops-plain',
+      'GitHub Actions': 'devicon-githubactions-plain',
+      'Ubuntu': 'devicon-ubuntu-plain',
+      'Windows Server': 'devicon-windows8-original',
+      'Nginx': 'devicon-nginx-original',
 
       // Message Queues
       'RabbitMQ': 'devicon-rabbitmq-plain',
 
       // Version Control
       'Git': 'devicon-git-plain',
+      'GitHub': 'devicon-github-original',
+      'GitLab': 'devicon-gitlab-plain',
+      'Bitbucket': 'devicon-bitbucket-original',
 
       // Web Technologies
       'HTML5': 'devicon-html5-plain',
@@ -87,6 +94,7 @@ export class TechIconComponent {
       'SASS': 'devicon-sass-original',
       'Bootstrap': 'devicon-bootstrap-plain',
       'Tailwind': 'devicon-tailwindcss-plain',
+      'Tailwind CSS': 'devicon-tailwindcss-plain',
 
       // Backend
       'PHP': 'devicon-php-plain',
@@ -97,12 +105,17 @@ export class TechIconComponent {
       // Web Servers
       'Apache': 'devicon-apache-plain',
 
+      // Project Management
+      'Jira': 'devicon-jira-plain',
+      'Trello': 'devicon-trello-plain',
+
       // Others
       'Elasticsearch': 'devicon-elasticsearch-plain',
       'Redis': 'devicon-redis-plain',
       'Selenium': 'devicon-selenium-original',
       'Firebase': 'devicon-firebase-plain',
       'GraphQL': 'devicon-graphql-plain',
+      'Swagger': 'devicon-swagger-plain',
     };
 
     const devicon = iconMap[this.name];
