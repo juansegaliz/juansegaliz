@@ -21,7 +21,7 @@ export class ContactPage implements OnInit {
 
   private updateSEO(): void {
     this.seoService.setPageMetadata({
-      title: 'Contact - Juan Sebastian Galindo Lizcano',
+      title: 'Contact - Juan Sebastian Galindo Lizcano - nuevo titulo',
       description: 'Connect with me via email or LinkedIn for collaboration, consulting, or teaching opportunities.',
       type: 'website',
       lang: this.languageService.getCurrentLanguage(),
